@@ -1,0 +1,45 @@
+//1. what is react and its role for single page application
+
+React is a  javascript library  that allows you to build single page applications by dynamically updates the states of the content
+to render the changes without rerendering the whole page.
+
+//2. how react is faster compared to other javascript frameworks
+
+React is  faster because it does not have to render the whole page on a small change. It uses Virutal DOM to compare the previous states 
+and updates only the items that were changed
+
+//3. what is virtual dom
+
+The virtual dom is a representation of a DOM object and is used to only update what has changed in the DOM.
+
+//4. how react renders dom in conservative manner
+
+React renders dom conservatively by comparing the Virtual DOM (current) to the real DOM(previous) and only updates what is necesary
+to set the real DOM to what the VDOM is
+
+//5. create a class component named - Success and show some quotes on success in its
+
+see Success.js
+
+
+//6. create a functional component SuccessChild, make it child of Success and pass Name and Address to it from Success
+
+See SuccessChild.js
+
+
+//7. create SuccessStory as another component, pass this as props in SuccessChild from Success component
+
+
+See SuccessChild
+
+
+//8. create UserSignIn component using uncontrolled way, should be class component
+
+See UserSignIn.js
+
+//9. create Product component to accept ProductName and ProductPrice
+see Product.js
+
+//10. pass a random value from SuccessStory component back to Success
+
+See SuccessStory.js
