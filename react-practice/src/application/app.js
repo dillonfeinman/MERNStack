@@ -13,7 +13,11 @@ import Hook from './AppComponents/User/UserHook'
 
 import LifeCycle from '../assessment4files/lifeCycleExamples'
 
-import Product from "./AppComponents/Product/ProductComponent";
+// import Product from "./AppComponents/Product/ProductComponent";
+import ProductList from "./AppComponents/Product/ProductList"
+import Product from "./AppComponents/Product/ProductContainer";
+
+import Cart from "./AppComponents/Cart/CartComponent";
 
 export default class Application extends Component  {
     constructor(props){
@@ -36,6 +40,7 @@ export default class Application extends Component  {
                             <Route path="/hook" element={<Hook/>}/>
                             <Route path="/life" element={<LifeCycle/>}/>
                             <Route path="/product" element={<Product/>}/>
+                            <Route path="/cart" element={<Cart/>}/>
 
 
 

@@ -1,8 +1,8 @@
-import React, {Component, useRef, useState} from "react";
-import { AddProductToStore, saveProductToDb } from "../../../state/Product/ProductAction";
+import React, {Component, useEffect, useRef, useState} from "react";
+import { AddProductToStore, getProductsFromDb, saveProductToDb } from "../../../state/Product/ProductAction";
 import { connect } from "react-redux";
 
-function Product(props){
+export default function Product(props){
     console.log(props);
     const [name, setName] = useState(props.Product.name)
     const [price, setPrice] = useState(props.Product.price)
@@ -25,6 +25,12 @@ function Product(props){
         props.SaveProduct(product.Product);
     }
 
+    useEffect(()=>{
+        
+        props.GetProducts()
+        
+    },[])
+
     return (
         <>
             <div>
@@ -44,28 +50,19 @@ function Product(props){
                 <input type="number" className="rating" min={0} max={5} value={rating} onChange={(e) => setRating(e.target.value)}/>
             </div>
             <input type="submit" className="submit" value={"submit"} onClick={(e) => setProduct(e.target.value)}/>
+
+            <div>
+                {props.products && props.products.map((item, index)=>(
+                    <button key={index} onClick={()=> {
+                        console.log("Saving "  + item)
+                        props.AddProductCart(item)
+                    }}>
+                        {JSON.stringify(item)}
+                    </button>
+                ))}
+
+            </div>
         </>
     )
     
 }
-let mapStateToProps=(store)=> {
-    return(
-        {
-            Product: store.productReducer.Product,
-        }
-    )
-}
-let mapDispatchToProps=(dispatch)=>{
-    return(
-        {
-            AddProduct: (newProduct)=>{
-                dispatch(AddProductToStore(newProduct))
-            },
-            SaveProduct: (newProduct)=>{
-                dispatch(saveProductToDb(newProduct))
-            }
-        }
-    )
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Product)

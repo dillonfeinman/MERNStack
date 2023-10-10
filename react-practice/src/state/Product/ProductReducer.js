@@ -14,6 +14,8 @@ let ProductReducer = (state = Initial_State, action)=> {
     switch(action.type){
         case ActionTypes.AddProductToStore:
             return {...state, Product: action.payload};
+        case ActionTypes.GetProductSuccess:
+            return {...state, products: action.payload};
         default:
             return state
     }

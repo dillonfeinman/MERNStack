@@ -5,10 +5,12 @@ import thunk from 'redux-thunk';
 
 import userReducer from './User/UserReducer'
 import productReducer from './Product/ProductReducer';
+import cartReducer from './Cart/CartReducer'
 
 const rootReducer = combineReducers({
     userReducer,
-    productReducer
+    productReducer,
+    cartReducer
 })
 
 export default configureStore(

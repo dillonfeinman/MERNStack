@@ -2,7 +2,11 @@ let express = require("express");
 let productRoute = express.Router();
 let productDataModel =  require("../data-model/productDataModel");
 
-
+productRoute.get("/api/get/all", (req,res)=>{
+    productDataModel.find().then((list)=>{
+        res.send(list);
+    })
+})
 
 productRoute.post("/api/save", (req,res)=>{
     let product = req.body;

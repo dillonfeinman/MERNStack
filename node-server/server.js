@@ -4,6 +4,7 @@ const productRoute = require('./router/product-route')
 const app = express()
 const userApp = express()
 const cors = require('cors')
+const cartRoute = require('./router/cart-route')
 
 console.log("We are in server.js")
 
@@ -24,6 +25,7 @@ app.use(express.json({limit:'2mb', extended:false}));
 
 app.use('/user',userRoute)
 app.use('/product',productRoute)
+app.use('/cart', cartRoute)
 userApp.use('/',userRoute)
 
 
