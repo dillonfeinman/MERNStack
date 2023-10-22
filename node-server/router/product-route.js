@@ -21,9 +21,9 @@ productRoute.post("/api/save", (req,res)=>{
             //use schema to create new product object
             let newProduct = new productDataModel(product)//req.body
             
-            newProduct.save().then((newProduct)=>{//will get _id once document is created
-                console.log("successful save ", newProduct);
-                res.send(newProduct)
+            newProduct.save().then((newerProduct)=>{//will get _id once document is created
+                console.log("successful save ", newerProduct);
+                res.send(newerProduct)
             }).catch((err1)=>{
                 console.log("err save", err1);
                 res.send("error while save")

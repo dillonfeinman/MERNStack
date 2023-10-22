@@ -5,6 +5,8 @@ const app = express()
 const userApp = express()
 const cors = require('cors')
 const cartRoute = require('./router/cart-route')
+const orderRoute = require('./router/order-route')
+const cancelledOrderRoute = require('./router/cancelled-order-route')
 
 console.log("We are in server.js")
 
@@ -26,6 +28,8 @@ app.use(express.json({limit:'2mb', extended:false}));
 app.use('/user',userRoute)
 app.use('/product',productRoute)
 app.use('/cart', cartRoute)
+app.use('/order',orderRoute)
+app.use('/cancelled',cancelledOrderRoute)
 userApp.use('/',userRoute)
 
 

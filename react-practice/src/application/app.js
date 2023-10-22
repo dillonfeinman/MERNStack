@@ -10,6 +10,8 @@ import Header from "./CommonComponents/HeaderComponent"
 import Footer from "./CommonComponents/FooterComponent"
 import Hook from './AppComponents/User/UserHook'
 
+import "./app.css"
+
 
 import LifeCycle from '../assessment4files/lifeCycleExamples'
 
@@ -18,6 +20,9 @@ import ProductList from "./AppComponents/Product/ProductList"
 import Product from "./AppComponents/Product/ProductContainer";
 
 import Cart from "./AppComponents/Cart/CartComponent";
+import CheckoutComponent from "./AppComponents/Checkout/CheckoutComponent";
+import OrderComponent from "./AppComponents/Checkout/OrderComponent";
+import CancelledOrderComponent from "./AppComponents/Checkout/CancelledOrderComponent";
 
 export default class Application extends Component  {
     constructor(props){
@@ -41,6 +46,9 @@ export default class Application extends Component  {
                             <Route path="/life" element={<LifeCycle/>}/>
                             <Route path="/product" element={<Product/>}/>
                             <Route path="/cart" element={<Cart/>}/>
+                            <Route path="/checkout" element={<CheckoutComponent/>}/>
+                            <Route path="/orders" element={<OrderComponent/>}/>
+                            <Route path="/cancelled" element={<CancelledOrderComponent/>}/>
 
 
 
